@@ -48,3 +48,36 @@ V8 자바스크립트 엔진
 
 - V8 자바스크립트 엔진으로 촉발된 자바스크립트의 발전
   - 과거 웹 서버에서 수행되던 로직들이 → 대거 클라이언트(브라우저)로 이동 → 웹 애플리케이션 개발에서 프론트엔드 영역이 주목받는 계기로 작용
+
+# 자바스크립트와 ECMAScript
+```
+ECMAScript = 자바스크립트 표준으로, 프로그래밍 언어의 값, 타입, 객체와 프로퍼티, 함수, 표준 빌트인 객체 등 핵심 문법을 규정한 것
+```
+```
+자바스크립트 = 프로그래밍 언어임. 기본 뼈대는 ECMAScript를 준수하고, 추가로 브라우저가 별도로 지원하는 클라이언트 사이드 Web API
+(즉, DOM, BOM, Canvas, XMLHttpRequest, fetch, requestAnimationFrame, SVG, Web Storage, Web Component, Web Worker 등을 아우리는 개념)
+```
+- 자바스크립트는 명령형(Imperative), 함수형(Functional), 프로토타입 기반(Prototype-based) 객체지향 프로그래밍을 지원하는 멀티 패러다임 프로그래밍 언어
+- 자바스크립트는 클래스 기반 객체지향 언어보다 효율적이면서 강력한 프로토타입 기반의 객체지향 언어
+
+# 브라우저에서 자바스크립트 vs Node.js에서 자바스크립트
+```
+브라우저 & Node.js 둘 다 자바스크립트 엔진을 내장하곤 있다.
+즉, 자바스크립트는 브라우저 환경 or Node.js 환경에서 실행할 수 있다.
+```
+**브라우저와 Node.js는 용도가 다르다.**
+
+- 브라우저 : HTML, CSS, JS를 실행해 웹페이지를 브라우저 화면에 렌더링하는 것이 주 목적
+- Node.js : 브라우저 외부에서 자바스크립트 실행 환경을 제공하는 것이 주 목적
+
+따라서, 브라우저와 Node.js가 공통적인 ECMAScript를 실행할 수 있지만 ECMAScript 이외에 추가로 제공하는 기능은 호환을 하지 않는다.<br>
+브라우저와 Node.js환경에서 자바스크립트 용도는 다르다.<br>
+
+<img src="https://camo.githubusercontent.com/f52273c0bd277c336a935df4979da4857f5514c54feca3b363fe2418666ed39c/68747470733a2f2f626c6f672e6b616b616f63646e2e6e65742f646e2f555a7742362f627472634f4f4e71684e672f734865564d6434564d6b37757a796636556c5842756b2f696d672e706e67" alt="ECMAScript" />
+
+```
+예로 들어, DOM API
+
+브라우저 → DOM API를 제공
+Node.js → DOM API를 제공하지 않음 → 브라우저 외부 환경에서는 HTML 요소를 파싱(Parsing)해서 객관화한 DOM을 직접 다룰 필요가 없기 때문
+```
